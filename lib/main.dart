@@ -5,7 +5,7 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(debugShowCheckedModeBanner: false, title: "Album de Fotos de Romero",theme: ThemeData(primarySwatch: Colors.amber), home: new PaginaInicio(title: "Album de Fotos de Romero")); //fin de materialapp return
+    return new MaterialApp(debugShowCheckedModeBanner: false, title: "Album de Fotos de Romero", theme: ThemeData(primarySwatch: Colors.amber), home: new PaginaInicio(title: "Album de Fotos de Romero")); //fin de materialapp return
   }
 }
 
@@ -27,23 +27,23 @@ class PaginaInicioState extends State<PaginaInicio> {
         title: new Text(widget.title),
       ),
       body: new GridView.extent(
-        maxCrossAxisExtent: 150.0,
-        mainAxisSpacing: 5.0,
-        crossAxisSpacing: 5.0,
+        maxCrossAxisExtent: 300.0,
+        mainAxisSpacing: 10.0,
+        crossAxisSpacing: 10.0,
         padding: const EdgeInsets.all(5),
         children: _buildGridTiles(29),
-      ),//Fin Gridview
-    );//Fin Scaffold
-  }//Fin Widget
-}//Fin Pgina Principal State
+      ), //Fin Gridview
+    ); //Fin Scaffold
+  } //Fin Widget
+} //Fin Pgina Principal State
 
 List<Widget> _buildGridTiles(numberOfTiles) {
   List<Container> containers = new List<Container>.generate(numberOfTiles, (int index) {
     //index = 0, 1, 2,...
-    final imageName = index < 9 ? 'images/image0${index + 1}.JPG' : 'images/image${index + 1}.JPG';
+    final imageName = index < 9 ? 'images/image0${index + 1}.jpeg' : 'images/image${index + 1}.jpeg';
     return new Container(
       child: new Image.asset(imageName, fit: BoxFit.fill),
     );
-  });//Fin Contenedor generar nombre de foto
+  }); //Fin Contenedor generar nombre de foto
   return containers;
-}//Fin de List
+} //Fin de List

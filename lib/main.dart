@@ -5,7 +5,7 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(home: new PaginaInicio(title: "Album de Fotos de Dana"));
+    return new MaterialApp(debugShowCheckedModeBanner: false, title: "Album de Fotos de Romero",theme: ThemeData(primarySwatch: Colors.amber), home: new PaginaInicio(title: "Album de Fotos de Romero")); //fin de materialapp return
   }
 }
 
